@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>焦点轮播图-纯js</title>
+    <style type="text/css">
+        *{
+            margin: 0px;
+            padding: 0px;
+            text-decoration: none;
+            list-style: none;
+        }
+        #container{
+            width: 1024px;
+            height: 576px;
+            margin: 0px auto;
+            position: relative;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        #container #imgs{
+            width: 8168px;
+            height: 576px;
+            position: absolute;
+        }
+        #imgs li{
+            float: left;
+            width: 1024px;
+            height: 576px;
+        }
+        #imgs li img{
+            width: 1024px;
+            height: 576px;
+        }
+        #container #points{
+            width: 140px;
+            height: 20px;
+            position: absolute;
+            top: 93%;
+            right: 1%;
+            z-index: 5;
+        }
+        #container #points a{
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            margin-right: 10px;
+            border: 2px solid rgba(255,255,255,0.3);
+            background-color: rgba(0,0,0,0.4);  
+        }
+        #container #points a.on{
+            background-color: rgba(255,255,255,0.4);
+            border: 2px solid rgba(0,0,0,0.3);
+        }
+        #container #points a:hover{
+            background-color: rgba(255,255,255,0.4);
+            border: 2px solid rgba(0,0,0,0.3);
+        }
+        #container #direction{
+            width: 1024px;
+            height: 55px; 
+            position: absolute;
+            display: none;
+            z-index: 5px;
+            top: 50%;
+        }
+        #container:hover #direction{
+            display: block;
+        }
+        #container #direction .arrow{
+            width: 28px;
+            height: 55px;
+        }
+        #container #direction #prev{
+            width: 28px;
+            height: 55px;
+            cursor: pointer;
+            float: left;
+            background: url(img/d-l.png) no-repeat;
+            background-size: 25px 25px;
+            background-position: 0px 16px;
+            background-color: rgba(0,0,0,0.3);
+        }
+        #container #direction #next{
+            width: 28px;
+            height: 55px;
+            cursor: pointer;
+            float: right;
+            background: url(img/d-r.png) no-repeat;
+            background-size: 25px 25px;
+            background-position: 4px 16px;
+            background-color: rgba(0,0,0,0.3);
+        }
+        #container #direction #prev:hover{
+            background-color: rgba(0,0,0,0.7);
+        }
+        #container #direction #next:hover{
+            background-color: rgba(0,0,0,0.7);
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload=function () {
+            var container = document.getElementById('container');
+            var imgs = document.getElementById('imgs');
+            var points = document.getElementById('points').getElementsByTagName('a');
+            var prev = document.getElementById('prev');
+            var next = document.getElementById('next');
+            var index = 1;
+            var animated = false;
+            var timer;
+
+            //圆点样式改变
+            function showPoints() {
+                for (var i = 0; i < points.length; i++) {
+                    points[i].className = '';
+                }
+                points[index - 1].className = "on";
+            }
+            
+            //图片切换动画
+            function animate(offset) {
+                animated = true;
+                var newLeft = parseInt(imgs.style.left) + offset;
+                var time = 400;
+                var interval = 50;
+                var speed = offset / (time / interval);
+                function move() {
+                    if ( (speed < 0 && parseInt(imgs.style.left) > newLeft) || (speed > 0 && parseInt(imgs.style.left) < newLeft) ) {
+                        imgs.style.left = parseInt(imgs.style.left) + speed +'px';
+                        setTimeout(move,interval);
+                    }
+                    else {
+                        animated = false;
+                        imgs.style.left = newLeft + "px";
+                        if ( newLeft < -5120 ) {
+                            imgs.style.left = -1024 + 'px';
+                        }
+                        if ( newLeft > -1024 ) {
+                            imgs.style.left = -5120 + 'px';
+                        }
+                    }
+                }
+                move();     
+            }
+            
+            //自动播放
+            function autoplay() {
+                timer = setInterval(function () {
+                    next.onclick();
+                },3000)
+            }
+            function stop() {
+                clearInterval(timer);
+            }
+            autoplay();
+            container.onmouseover = stop;
+            container.onmouseout = autoplay;
+            
+
+            //点击箭头
+            prev.onclick = function () {
+                if ( index < 2 ) {
+                    index = 5;
+                }
+                else{
+                    index -= 1;
+                }
+                showPoints();
+                if (!animated) {
+                    animate(1024);
+                }
+            }
+            next.onclick = function () {
+                if ( index > 4 ) {
+                    index = 1;
+                }
+                else{
+                    index += 1;
+                }
+                showPoints();
+                if (!animated) {
+                    animate(-1024);
+                }
+            }
+            
+            //点击圆点
+            for (var i = 0; i < points.length; i++) {
+                points[i].onclick = function () {
+                    if (this.className == "on") {
+                        return;
+                    }
+                    var myIndex = parseInt(this.getAttribute("index"));
+                    var offset = -1024 * (myIndex - index);
+                    if (!animated) {
+                        animate(offset);
+                    }
+                    index = myIndex;
+                    showPoints();
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <!-- left属性必须内嵌在标签内，不然js无法获取该属性，从而导致事件不会发生。  -->
+        <ul id="imgs" style="left:-1024px">
+            <li>
+                <a href=""><img src="img/5.jpg" alt="5"></a>
+            </li>
+            <li>
+                <a href=""><img src="img/1.jpg" alt="1"></a>
+            </li>
+            <li>
+                <a href=""><img src="img/2.jpg" alt="2"></a>
+            </li>
+            <li>
+                <a href=""><img src="img/3.jpg" alt="3"></a>
+            </li>
+            <li>
+                <a href=""><img src="img/4.jpg" alt="4"></a>
+            </li>
+            <li>
+                <a href=""><img src="img/5.jpg" alt="5"></a>
+            </li>
+            <li>
+                <a href=""><img src="img/1.jpg" alt="1"></a>
+            </li>
+        </ul>
+        <div id="points">
+            <a index="1" class="on"></a>
+            <a index="2" ></a>
+            <a index="3" ></a>
+            <a index="4" ></a>
+            <a index="5" ></a>
+        </div>
+        <div id="direction">
+            <a id="prev"></a>
+            <a id="next"></a>
+        </div>
+    </div>
+</body>
+</html>
