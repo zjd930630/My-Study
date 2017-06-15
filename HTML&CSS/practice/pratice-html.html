@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" Content="text/html"; charset="utf-8">
+    <!-- 浏览器是通过Content-type这个标记来了解文档类型的;charset=utf-8：编码方式，用的是utf-8编码-->
+	<style type="text/css">
+		<!--运用css为下面的表格加入边框-->
+		table,tr,td,th{
+			border:1px solid #000;
+		}
+	</style>
+	<title>HTML学习及应用</title>
+  </head>
+  <body>
+	<!--<div>标签将文档分割成不同的部分-->
+    <div>
+	  <!-- 标题通过<h1>-<h6>完成定义-->  
+      <h3>关雎</h3>  
+      <p>
+         关关雎鸠，在河之洲。窈窕淑女，君子好逑。<br/>
+         参差荇菜，左右流之。窈窕淑女，寤寐求之。<br/>
+         求之不得，寤寐思服。悠哉悠哉，辗转反侧。<br/>
+         参差荇菜，左右采之。窈窕淑女，琴瑟友之。<br/>
+         参差荇菜，左右芼之。窈窕淑女，钟鼓乐之。<br/>
+          <!-- <br/>实现换行，自封闭-->
+      <!--HTML中自动忽略空格，输入&nbsp可以添加空格。-->
+      </p>
+    </div>
+	<hr/>
+    <div>
+	  <h3>文本格式化</h3>
+	  <!--<pre>为预格式化文本，保留空格和换行符-->
+	  <pre>
+		  <p>
+		    <b>粗体</b>
+		    <big>大字体</big>
+		    <em>强调</em>
+		    <i>斜体</i>
+		    <small>小字体</small>
+		    <strong>加重语气</strong> 
+	      </p>
+	  </pre>	
+    </div>
+	<hr/>
+	<div>
+	  <h3>引用</h3>
+	  <!--<q>标签显示时会自动添加引号，<blockquote>标签显示时会缩进处理-->
+	  <q>You still have lots more to work on</q>
+	  <blockquote>未来的变数太多，而我所能做的，就是走好这一步。 <br/>
+                  一条无限延伸的思绪，一场浮华落空的梦境。结局，宿命。 <br/>
+                  选择不同，命运自然不同。 <br/>
+                  失败，总在成功之前发生，成功路上，放弃就是失败。<br/>
+                  有些人永远都屹立在巅峰，铭刻在明灭不定的青史里。即使被尘世遗忘，也闪耀着永恒。<br/> 
+                  在这布满硝烟与瓦砾的乱世中，没有人能纤尘不染地活着。<br/> 
+                  我，宁愿死作剑上的铭文，也不要被遗忘地活着！<br/> 
+                  从我学会奔跑的那一刻起，我就开始不停地向前奔跑，因为我不敢回头。怕回头看见的，是你眼角的失望。
+	  </blockquote>
+	</div>
+	<hr/>
+	<div>
+      <h3>网页链接</h3>
+      <!--title表示鼠标滑过显示文本；若要在新的浏览器窗口打开，添加target=“_blank”-->
+      <a href="https://www.baidu.com" title="百度链接">点我跳转至百度</a><br/>
+	</div>
+	<hr/>
+	<div>
+	  <h3>图片链接</h3>
+	  <!--title表示提供在图像可见时对图像的描述；alt表示下载失败时的替换文本-->
+	  <img src="https://gss0.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/5243fbf2b2119313d54d378b66380cd791238dfb.jpg" alt="网球王子" title="picture of 网球王子" width='762px' height='399px'/>
+	</div>
+	<hr/>
+	<div>
+	  <h3>无序列表与有序列表</h3>
+	  <ul>
+	    <li>《嫌疑人X的献身》</li>
+	    <li>《白夜行》</li>
+	    <li>《解忧杂货店》</li>
+	    <li>《放学后》</li>
+	    <li>《恶意》</li>
+	  </ul>
+	  <ol>
+	    <li>《秦时明月之百步飞剑》</li>
+	    <li>《秦时明月之夜尽天明》</li>
+	    <li>《秦时明月之诸子百家》</li>
+	    <li>《秦时明月之万里长城》</li>
+	    <li>《秦时明月之君临天下》</li>
+	  </ol>
+	</div>
+	<hr/>
+	<div>
+	  <h3>制作表格</h3>
+	  <!--summary对该表格进行描述，增强可读性-->
+	  <table summary="人物介绍">
+	    <!--caption为表格添加标题-->
+	    <caption>人物简介</caption>
+	    <tr>
+	      <th>姓名</th>
+          <th>星座</th>
+          <th>爱好</th>
+        </tr>
+        <tr>
+          <td>隔壁老王</td>
+          <td>处女座</td> 
+          <td>挖墙脚</td> 
+        </tr>	
+        <tr>
+          <td>越前龙马</td>
+          <td>摩羯座</td> 
+          <td>网球</td> 
+        </tr>
+	  </table>
+	</div>
+	<hr/>
+	<div>
+	  <!--action表示浏览者输入数据被传送到的地方；method表示数据的传送方式-->
+	  <form method="post" action="save.php">
+	    <h3>文本、密码输入框</h3>
+	    <!--text表示为文本输入框；password表示为密码输入框；name为文本框命名；value设置默认值-->
+	   	账户：<input type="text" name="myname" value="草泥马"/><br/>
+	    密码：<input type="password" name="pass" value="111111"/><br/>
+	    <hr/>
+	    <h3>文本域<h3>
+	    <textarea rows="5" cols="10" >请输入内容。。。。</textarea>
+	    <!--rows表示行数，cols表示列数-->
+	    <hr/>
+	    <h3>单选框、复选框</h3>
+	      您的性别？<br/>
+	      <!--radio表示单选框，checkbox表示复选框；value表示提交到服务器的值；name为控件命名（同一组的单选按钮，name值必须一才能起到单选作用；当添加checked="checked"时，该选项默认被选中-->
+	      <input type="radio" value="男" name="radiosex"/>男
+	      <input type="radio" value="女" name="radiosex"/>女
+	      <input type="radio" value="不详" name="radiosex" checked="checked"/>不详<br/><br/>
+	      你喜欢什么？<br/>
+	      <input type="checkbox" value="唱歌" name="checkbox1"/>唱歌
+	      <input type="checkbox" value="跳舞" name="checkbox1"/>跳舞
+	      <input type="checkbox" value="运动" name="checkbox1"/>运动
+	      <input type="checkbox" value="旅游" name="checkbox1"/>旅游
+    	<hr/>
+	    <h3>下拉复选框</h3>
+	    <label>爱好:</label>
+		  <!--select中添加multiple="multiply"可以实现多选-->
+	      <select>
+	        <!--value表示提交到服务器的值；当添加selected="selected"时，该选项被选中-->
+	        <option value="唱歌">唱歌</option>
+	        <option value="跳舞">跳舞</option>
+	        <option value="运动" selected="selected">运动</option>
+	        <option value="旅游">旅游</option>
+	        <option value="购物">购物</option>
+	      </select>
+	    <hr/>
+	    <h3>提交、重置按钮</h3>
+	    <!--value表示按钮上显示的文字-->
+		<!--label中for属性中的值与相关控件中id属性值必须相同-->
+		<label for="myname">你的大名:</label>
+		<input type="text" value=" " name="nyname"/>
+		<input type="submit" value="提交" name="submitbtn"/>
+		<input type="reset" value="重置" name="resetbtn"/>
+	  </form>
+	</div>
+  </body>
+</html>

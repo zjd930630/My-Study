@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" Content="text/html"; charset="utf-8">
+  	<title>CSS学习及应用</title>
+    <link href="spanstyle.css" rel="stylesheet" type="text/css">
+  	<style type="text/css"> 
+      p{ 
+        font-size: 20px;      /*设置字体大小*/
+	      color: blue;          /*设置字体颜色*/
+	      font-family: times;   /*设置字体*/
+	      font-weight: bold;    /*设置字体粗细*/   
+      }	  
+      #setcolorss{   
+        color:orange;   
+      }  
+      .colorset{  
+        color:grey;  
+      }	
+      .setcolorsss > span{   
+        color:yellow;   
+      }            	  
+  	</style> 	
+  </head>
+  <body>
+    <!--外部式css样式--> 
+    <p>
+      <span>勇敢</span>，不是通过让别人为他担心来证明的,尤其是那些关心他的人。
+      <span>强者</span>，能够让他的朋友、亲人感到安全和放心。&nbsp——盖聂
+    </p>
+    <!--内联式css样式--> 
+  	<p>
+      <span style="color:green">勇敢</span>，不是通过让别人为他担心来证明的,尤其是那些关心他的人。
+      <span style="color:green">强者</span>，能够让他的朋友、亲人感到安全和放心。&nbsp——盖聂
+    </p>
+    <!--使用ID选择器来设置样式。下面是错误示范，id只能用一次，但是在html+css中没有语法错误，在js中就会出现识别问题-->
+    <p>
+      <span id="setcolorss">勇敢</span>，不是通过让别人为他担心来证明的,尤其是那些关心他的人。
+      <span id="setcolorss">强者</span>，能够让他的朋友、亲人感到安全和放心。&nbsp——盖聂
+    </p>
+    <!--使用子选择器来设置样式-->
+    <p class="setcolorsss">
+      <span>勇敢</span>，不是通过让别人为他担心来证明的,尤其是那些关心他的人。
+      <span>强者</span>，能够让他的朋友、亲人感到安全和放心。&nbsp——盖聂
+    </p> 
+    <!--使用类选择器来设置样式--> 
+    <p>
+      <span class="colorset">勇敢</span>，不是通过让别人为他担心来证明的,尤其是那些关心他的人。
+      <span class="colorset">强者</span>，能够让他的朋友、亲人感到安全和放心。&nbsp——盖聂
+    </p>
+         
+  </body>
+</html>
