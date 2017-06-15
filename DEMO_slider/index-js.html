@@ -122,8 +122,8 @@
             function animate(offset) {
                 animated = true;
                 var newLeft = parseInt(imgs.style.left) + offset;
-                var time = 400;
-                var interval = 50;
+                var time = 200;
+                var interval = 25;
                 var speed = offset / (time / interval);
                 function move() {
                     if ( (speed < 0 && parseInt(imgs.style.left) > newLeft) || (speed > 0 && parseInt(imgs.style.left) < newLeft) ) {
