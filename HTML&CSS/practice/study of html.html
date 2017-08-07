@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+    <script type="text/javascript">
+        swfobject.embedSWF("bird.swf", "bird", "400", "300", "8.0.0");
+    </script>
+</head>
+<body>
+	<!-- 标题 -->
+	<h1>一级标题</h1>
+	<h2>二级标题</h2>
+	<h3>三级标题</h3>
+	<h4>四级标题</h4>
+	<h5>五级标题</h5>
+	<h6>六级标题</h6>
+
+	<!-- 段落 -->
+	<p>你若安好，便是晴天。</p>
+
+	<!-- 粗体、斜体 -->
+	<b>粗体</b>
+	<i>斜体</i> &nbsp
+
+	<!-- 上标和下标 -->
+	E=CM<sup>2</sup> &nbsp
+	CO<sub>2</sub>
+
+	<!-- 当浏览器遇到两个或者两个以上的空格、遇到换行时，浏览器会将其看作为一个空格，称之为白色空间折叠。 -->
+
+	<!-- 换行符、水平线 -->
+	<br />
+	<hr />
+
+	<!-- 加粗、强调 -->
+	<p><strong>You can make it!</strong></p>
+    <p><em>You</em> are the best!</p>
+
+    <!-- 引用 -->
+    <blockquoke cite="https://en.wikipedia.org/wiki/Stay_Hungry_Stay_Foolish">Stay hungry,Stay foolish.</blockquoke>
+    <p>Somebody said <q>Time is money.</q></p>
+
+    <!-- 缩写词和首字母缩写 -->
+    <abbr title="HyperText Markup Language">HTML</abbr> 
+    <br />
+
+    <!-- 引文和定义 -->
+    <p><cite>《嫌疑人X的献身》</cite> is my favorite book.</p> 
+    <p><dfn>锚定效应</dfn> 是人类在进行决策时，会过度偏重最早取得的第一笔资讯（这称为锚点），即使这个资讯与这项决定明显无关。</p>
+
+    <!-- 设计者详细信息 -->
+    <address id="info">
+    	<p>Jacob</p>
+    	<p>18888888888</p>
+    	<p>浙江省杭州市</p>
+    </address>
+
+    <!-- 内容的修改 -->
+    <p>You are my <ins>almost</ins> <del>hatest</del> lover.</p>
+    <p>The price is $999 <s>$1299</s>.</p>
+
+    <!-- 列表 -->
+    <h2>有序列表</h2>
+    <ol>
+    	<li>第一步：xxxxx</li>
+    	<li>第二步：xxxxx</li>
+    	<li>第三步：xxxxx</li>
+    	<li>第四步：xxxxx</li>
+    	<li>第五步：xxxxx</li>
+    </ol>
+    <h2>无序列表</h2>
+    <ul>
+    	<li>澳网</li>
+    	<li>法网</li>
+    	<li>美网</li>
+    	<li>温网</li>
+    </ul>
+    <h2>定义列表</h2>
+    <dl>
+    	<dt>HTML</dt>
+    	<dd>一种用于创建网页的标准标记语言</dd>
+    	<dt>CSS</dt>
+    	<dd>一种用来为结构化文档（如HTML 文档或XML 应用）添加样式（字体、间距和颜色等）的计算机语言</dd>
+    	<dt>JavaScript</dt>
+    	<dd>一门动态类型，面向对象（基于原型）的直译语言。</dd>
+    </dl>
+
+    <!-- 链接 -->
+    <a href="https://www.google.com">指向其他网站的链接</a><br />
+    <a href="相对URL">指向同一网站中其他页面的链接</a><br />
+    <a href="mailto:zjd631732760@qq.com">EMAIL链接</a><br />
+    <a href="https://www.google.com" target="_blank">在新窗口中打开链接</a><br />
+    <a href="#info">链接到当前页面的某个特定位置</a><br />
+
+    <!-- 图像 -->
+    <img src="https://lh4.googleusercontent.com/-v0soe-ievYE/AAAAAAAAAAI/AAAAAAADwkE/KyrKDjjeV1o/photo.jpg" alt="google" title="谷歌" width="100px" height="100px" />
+    <figure>
+    	<img src="http://hgxxjsfz.q.luohuedu.net/Images/Pictures/34043/168974/o_34043634212137081778220.jpg" alt="网球王子" width="168px" height="200px" />
+    	<figcaption>越前龙马</figcaption>
+    </figure>
+
+    <!-- 表格 -->
+    <table>
+    	<thead>
+    		<tr>
+    			<th scope="col">供应商</th>
+    			<th scope="col">商品</th>
+    			<th scope="col">合计</th>
+    			<th scope="col">第一季度</th>
+    			<th scope="col">第二季度</th>
+    			<th scope="col">第三季度</th>
+    			<th scope="col">第四季度</th>
+    		</tr>
+    	</thead>
+    	<tbody>
+    		<tr>
+    			<th scope="row" rowspan="3">供应商A</th>
+    			<td>商品1</td>
+    			<td>10000</td>
+    			<td>2500</td>
+    			<td>2500</td>
+    			<td>2500</td>
+    			<td>2500</td>
+    		</tr>
+    		<tr>
+    			<td>商品2</td>
+    			<td>10000</td>
+    			<td>2500</td>
+    			<td>2500</td>
+    			<td>2500</td>
+    			<td>2500</td>
+    		</tr>
+    		<tr>
+    			<td>小计</td>
+    			<td>20000</td>
+    			<td>5000</td>
+    			<td>5000</td>
+    			<td>5000</td>
+    			<td>5000</td>
+    		</tr>
+    		<tr>
+    			<th scope="row" rowspan="3">供应商B</th>
+    			<td>商品1</td>
+    			<td>10000</td>
+    			<td>2500</td>
+    			<td>2500</td>
+    			<td>2500</td>
+    			<td>2500</td>
+    		</tr>
+    		<tr>
+    			<td>商品2</td>
+    			<td>10000</td>
+    			<td>2500</td>
+    			<td>2500</td>
+    			<td>2500</td>
+    			<td>2500</td>
+    		</tr>
+    		<tr>
+    			<td>小计</td>
+    			<td>20000</td>
+    			<td>5000</td>
+    			<td>5000</td>
+    			<td>5000</td>
+    			<td>5000</td>
+    		</tr>
+    		<tr>
+    			<th scope="row" rowspan="3">供应商C</th>
+    			<td>商品1</td>
+    			<td>10000</td>
+    			<td>2500</td>
+    			<td>2500</td>
+    			<td>2500</td>
+    			<td>2500</td>
+    		</tr>
+    		<tr>
+    			<td>商品2</td>
+    			<td>10000</td>
+    			<td>2500</td>
+    			<td>2500</td>
+    			<td>2500</td>
+    			<td>2500</td>
+    		</tr>
+    		<tr>
+    			<td>小计</td>
+    			<td>20000</td>
+    			<td>5000</td>
+    			<td>5000</td>
+    			<td>5000</td>
+    			<td>5000</td>
+    		</tr>
+    	</tbody>
+    	<tfoot>
+    		<th colspan="2">合计</th>
+    		<td>60000</td>
+    		<td>15000</td>
+    		<td>15000</td>
+    		<td>15000</td>
+    		<td>15000</td>
+    	</tfoot>
+    </table><br />
+
+    <!-- 表单 -->
+    <form action="xxx.php" method="post">
+    	<filedset>
+    		<legend>Your Information:</legend>
+    		<label>
+    			Username: <input type="text" name="Username" maxlength="12" size="20" />
+    		</label>
+    		<br />
+    		<label for="password">Password:</label>
+    		<input type="password" name="password" id="password" size="20" />
+    	</filedset>
+    	<br />
+    	<filedset>
+    		<legend>Your Deatils:</legend>
+    		<label for="self-introduction">Self-Introduction:</label>
+    		<br />
+    		<textarea name="self-introduction" id="self-introduction" cols="30" rows="10" placeholder="自我介绍"></textarea>
+    		<p>
+    			Who are you?
+    			<br />
+    			<input type="radio" name="who?" value="nobody" id="nobody" checked="checked">
+    			<label for="nobody">nobody</label>
+    			<input type="radio" name="who?" value="anyone" id="anyone">
+    			<label for="anyone">anyone</label>
+    			<input type="radio" name="who?" value="everyone" id="everyone">
+    			<label for="everyone">everyone</label>
+    		</p>
+    		<p>
+    			What do you love?
+    			<br />
+    			<input type="checkbox" name="love" value="sleep" id="sleep">
+    			<label for="sleep">sleep</label>
+    			<input type="checkbox" name="love" value="eat" id="eat">
+    			<label for="eat">eat</label>
+    			<input type="checkbox" name="love" value="travel" id="travel">
+    			<label for="travel">travel</label>
+    			<input type="checkbox" name="love" value="study" id="study">
+    			<label for="study">study</label>
+    			<input type="checkbox" name="love" value="exercise" id="exercise">
+    			<label for="exercise">exercise</label>
+    		</p>
+    		<p>
+    			<label for="college">which is your college?</label>
+    			<br />
+    			<select name="college" id="college">
+	    			<option value="北京科技大学">北京科技大学</option>
+    				<option value="北京大学">北京大学</option>
+    				<option value="清华大学">清华大学</option>
+    				<option value="北京电影学院">北京电影学院</option>
+    				<option value="浙江大学">浙江大学</option>
+    			</select>
+    		</p>
+    		<p>
+    			<label for="major">which is your major?</label>
+    			<br />
+    			<select name="major" id="major" multiple="multiple" size="3">
+	    			<option value="计算机">计算机</option>
+    				<option value="金融学">金融学</option>
+    				<option value="数学">数学</option>
+    				<option value="语言学">语言学</option>
+    				<option value="心理学">心理学</option>
+    				<option value="医学">医学</option>
+    				<option value="政治学">政治学</option>
+    			</select>
+    		</p>
+    		<p>
+    			<label for="resume">Upload your resume:</label>
+    			<br>
+    			<input type="file" name="resume" id="resume">
+    			<input type="submit" value="Upload">
+    		</p>
+    		<input type="text" name="tel">
+    		<input type="image" src="http://pic.2265.com/upload/2017-3/2017321845342687.png" width="25px" height="25px">
+    		<br>
+    		<button>
+    			<img src="http://www.haotu.net/up/4027/512/16-Plus.png" alt="add" width="14px" height="14px">Add
+    		</button>
+    		<p>
+    			<label for="date">Today is:</label>
+    			<input type="date" name="date" id="date">
+    			<input type="submit" value="submit">
+    		</p>
+    		<p>
+    			<label for="email">your email:</label>
+    			<input type="email" name="email" id="email">
+    			<input type="submit" value="submit">
+    		</p>
+    		<p>
+    			<label for="blog">your blog:</label>
+    			<input type="url" name="blog" id="blog">
+    			<input type="submit" value="submit">
+    		</p>
+    		<p>
+    			<label for="search">search:</label>
+    			<input type="search" name="search" id="<search></search>">
+    			<input type="submit" value="search">
+    		</p>
+    	</filedset>
+    </form>
+
+    <!-- 内联框架 -->
+    <iframe src="http://map.baidu.com/" frameborder="0" width="500px" height="500px" scrolling="yes"></iframe>
+    <br><br><br><br>
+    &lt;&gt;&amp;&quot;&cent;&pound;&yen;&euro;&copy;&reg;&trade;&lsquo;&rsquo;&ldquo;&rdquo;&times;&divide;
+    <br>
+
+    <!-- Flash、视频、音频 -->
+    <div id="bird">
+        <p>An animal of a bird taking a shower.</p>
+    </div>
+    <video  poster="http://img12.3lian.com/gaoqing02/06/36/13.jpg" width="300px" height="300px" preload="metadata" controls="yes" loop="no">
+        <source src="path1.mp4">
+        <source src="path2.webm">
+        <p>A describe of video.</p>
+    </video>
+    <audio controls="yes" loop="no" autoplay="no">
+        <source src="path1.mp3">
+        <source src="path2.ogg">
+        <p>A describe of audio.</p>
+    </audio>
+</body>
+</html>
